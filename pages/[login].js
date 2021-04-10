@@ -24,7 +24,7 @@ export default function Member({ user }) {
 
 export const getStaticPaths = async () => {
   const response = await fetch(
-    `https://api.github.com/orgs/rocketseat/members`
+    `https://api.github.com/orgs/hackday-imed/members`
   );
   const data = await response.json();
 

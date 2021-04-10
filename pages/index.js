@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next";
-
+import React, { useState } from "react";
+import Link from "next/link";
 export default function Home({ org }) {
   return (
     <div>
@@ -9,12 +10,13 @@ export default function Home({ org }) {
       <p>
         Site: <a href={org.blog}>{org.blog}</a>
       </p>
+      <Link href="/pagina">Ir para pagina estatica</Link>
     </div>
   );
 }
 
 export const getStaticProps = async () => {
-  const response = await fetch("https://api.github.com/orgs/rocketseat");
+  const response = await fetch("https://api.github.com/orgs/hackday-imed");
   const data = await response.json();
 
   return {
